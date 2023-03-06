@@ -6,7 +6,7 @@ package statements
 
 import (
 	"xorm.io/builder"
-	"xorm.io/xorm/schemas"
+	"github.com/36625090/xorm/schemas"
 )
 
 type QuoteReplacer struct {

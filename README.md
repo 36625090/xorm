@@ -4,14 +4,14 @@
 
 Xorm is a simple and powerful ORM for Go.
 
-[![Build Status](https://drone.gitea.com/api/badges/xorm/xorm/status.svg)](https://drone.gitea.com/xorm/xorm) [![](http://gocover.io/_badge/xorm.io/xorm)](https://gocover.io/xorm.io/xorm) [![](https://goreportcard.com/badge/xorm.io/xorm)](https://goreportcard.com/report/xorm.io/xorm) [![Join the chat at https://img.shields.io/discord/323460943201959939.svg](https://img.shields.io/discord/323460943201959939.svg)](https://discord.gg/HuR2CF3)
+[![Build Status](https://drone.gitea.com/api/badges/xorm/xorm/status.svg)](https://drone.gitea.com/xorm/xorm) [![](http://gocover.io/_badge/github.com/36625090/xorm)](https://gocover.io/github.com/36625090/xorm) [![](https://goreportcard.com/badge/github.com/36625090/xorm)](https://goreportcard.com/report/github.com/36625090/xorm) [![Join the chat at https://img.shields.io/discord/323460943201959939.svg](https://img.shields.io/discord/323460943201959939.svg)](https://discord.gg/HuR2CF3)
 
 ## Notice
 
 v1.0.0 has some break changes from v0.8.2.
 
 - Removed some non gonic function name `Id`, `Sql`, please use `ID`, `SQL` instead.
-- Removed the dependent from `xorm.io/core` and moved the codes to `xorm.io/xorm/core`, `xorm.io/xorm/names`, `xorm.io/xorm/schemas` and others.
+- Removed the dependent from `xorm.io/core` and moved the codes to `github.com/36625090/xorm/core`, `github.com/36625090/xorm/names`, `github.com/36625090/xorm/schemas` and others.
 - Renamed some interface names. i.e. `core.IMapper` -> `names.Mapper`, `core.ILogger` -> `log.Logger`.
 
 ## Features
@@ -57,13 +57,13 @@ Drivers for Go's sql package which currently support database/sql includes:
 
 ## Installation
 
-	go get xorm.io/xorm
+	go get github.com/36625090/xorm
 
 ## Documents
 
 * [Manual](http://xorm.io/docs)
 
-* [GoDoc](http://pkg.go.dev/xorm.io/xorm)
+* [GoDoc](http://pkg.go.dev/github.com/36625090/xorm)
 
 ## Quick Start
 

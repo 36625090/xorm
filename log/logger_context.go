@@ -7,7 +7,7 @@ package log
 import (
 	"fmt"
 
-	"xorm.io/xorm/contexts"
+	"github.com/36625090/xorm/contexts"
 )
 
 // LogContext represents a log context

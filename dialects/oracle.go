@@ -13,8 +13,8 @@ import (
 	"strconv"
 	"strings"
 
-	"xorm.io/xorm/core"
-	"xorm.io/xorm/schemas"
+	"github.com/36625090/xorm/core"
+	"github.com/36625090/xorm/schemas"
 )
 
 var (

@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"xorm.io/xorm/internal/utils"
+	"github.com/36625090/xorm/internal/utils"
 )
 
 // String2Time converts a string to time with original location

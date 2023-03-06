@@ -7,7 +7,7 @@ package xorm
 import (
 	"reflect"
 
-	"xorm.io/xorm/internal/utils"
+	"github.com/36625090/xorm/internal/utils"
 )
 
 // IterFunc only use by Iterate
