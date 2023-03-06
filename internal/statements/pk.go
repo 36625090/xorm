@@ -9,7 +9,7 @@ import (
 	"reflect"
 
 	"xorm.io/builder"
-	"xorm.io/xorm/schemas"
+	"github.com/36625090/xorm/schemas"
 )
 
 var (

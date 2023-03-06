@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"xorm.io/builder"
-	"xorm.io/xorm/schemas"
+	"github.com/36625090/xorm/schemas"
 
 	"github.com/stretchr/testify/assert"
 )

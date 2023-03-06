@@ -12,9 +12,9 @@ import (
 	"strings"
 
 	"xorm.io/builder"
-	"xorm.io/xorm/caches"
-	"xorm.io/xorm/internal/utils"
-	"xorm.io/xorm/schemas"
+	"github.com/36625090/xorm/caches"
+	"github.com/36625090/xorm/internal/utils"
+	"github.com/36625090/xorm/schemas"
 )
 
 // enumerated all errors

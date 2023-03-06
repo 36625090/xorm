@@ -8,12 +8,12 @@ import (
 	"errors"
 	"reflect"
 
+	"github.com/36625090/xorm/caches"
+	"github.com/36625090/xorm/convert"
+	"github.com/36625090/xorm/internal/statements"
+	"github.com/36625090/xorm/internal/utils"
+	"github.com/36625090/xorm/schemas"
 	"xorm.io/builder"
-	"xorm.io/xorm/caches"
-	"xorm.io/xorm/convert"
-	"xorm.io/xorm/internal/statements"
-	"xorm.io/xorm/internal/utils"
-	"xorm.io/xorm/schemas"
 )
 
 const (

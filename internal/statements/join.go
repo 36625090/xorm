@@ -9,9 +9,9 @@ import (
 	"strings"
 
 	"xorm.io/builder"
-	"xorm.io/xorm/dialects"
-	"xorm.io/xorm/internal/utils"
-	"xorm.io/xorm/schemas"
+	"github.com/36625090/xorm/dialects"
+	"github.com/36625090/xorm/internal/utils"
+	"github.com/36625090/xorm/schemas"
 )
 
 // Join The joinOP should be one of INNER, LEFT OUTER, CROSS etc - this will be prepended to JOIN

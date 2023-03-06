@@ -8,6 +8,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"github.com/36625090/xorm/pageable"
 	"io"
 	"os"
 	"reflect"
@@ -17,15 +18,15 @@ import (
 	"strings"
 	"time"
 
-	"xorm.io/xorm/caches"
-	"xorm.io/xorm/contexts"
-	"xorm.io/xorm/core"
-	"xorm.io/xorm/dialects"
-	"xorm.io/xorm/internal/utils"
-	"xorm.io/xorm/log"
-	"xorm.io/xorm/names"
-	"xorm.io/xorm/schemas"
-	"xorm.io/xorm/tags"
+	"github.com/36625090/xorm/caches"
+	"github.com/36625090/xorm/contexts"
+	"github.com/36625090/xorm/core"
+	"github.com/36625090/xorm/dialects"
+	"github.com/36625090/xorm/internal/utils"
+	"github.com/36625090/xorm/log"
+	"github.com/36625090/xorm/names"
+	"github.com/36625090/xorm/schemas"
+	"github.com/36625090/xorm/tags"
 )
 
 // Engine is the major struct of xorm, it means a database manager.
@@ -1442,4 +1443,10 @@ func (engine *Engine) Transaction(f func(*Session) (interface{}, error)) (interf
 	}
 
 	return result, nil
+}
+
+func (engine *Engine) FindPagination(rowsSlicePtr interface{}, p pageable.Pageable, condiBean ...interface{}) (*pageable.Pagination, error) {
+	session := engine.NewSession()
+	session.isAutoClose = true
+	return session.FindPagination(rowsSlicePtr, p, condiBean...)
 }

@@ -1,4 +1,4 @@
-module xorm.io/xorm
+module github.com/36625090/xorm
 
 go 1.13
 
@@ -7,7 +7,6 @@ require (
 	github.com/denisenkom/go-mssqldb v0.10.0
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/goccy/go-json v0.8.1
-	github.com/golang/snappy v0.0.4 // indirect
 	github.com/jackc/pgx/v4 v4.12.0
 	github.com/json-iterator/go v1.1.12
 	github.com/lib/pq v1.10.2
