@@ -9,7 +9,17 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"github.com/36625090/xorm/caches"
+	"github.com/36625090/xorm/contexts"
+	"github.com/36625090/xorm/core"
+	"github.com/36625090/xorm/dialects"
+	"github.com/36625090/xorm/internal/utils"
+	"github.com/36625090/xorm/log"
+	"github.com/36625090/xorm/names"
 	"github.com/36625090/xorm/pageable"
+	"github.com/36625090/xorm/schemas"
+	"github.com/36625090/xorm/tags"
+
 	"io"
 	"os"
 	"reflect"
@@ -18,16 +28,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/36625090/xorm/caches"
-	"github.com/36625090/xorm/contexts"
-	"github.com/36625090/xorm/core"
-	"github.com/36625090/xorm/dialects"
-	"github.com/36625090/xorm/internal/utils"
-	"github.com/36625090/xorm/log"
-	"github.com/36625090/xorm/names"
-	"github.com/36625090/xorm/schemas"
-	"github.com/36625090/xorm/tags"
 )
 
 // Engine is the major struct of xorm, it means a database manager.
@@ -74,7 +74,7 @@ func NewEnginePlus(cfg *Config, w io.Writer) (EngineInterface, error) {
 	if cfg.ShowSql {
 		eng.ShowSQL(cfg.ShowSql)
 	}
-	eng.SetLogger(w)
+	eng.SetLogger(log.NewSimpleLogger(w))
 	eng.SetMaxIdleConns(cfg.MaxIdle)
 	eng.SetMaxOpenConns(cfg.MaxConn)
 	return eng, nil
