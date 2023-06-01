@@ -7,6 +7,7 @@ package xorm
 import (
 	"context"
 	"database/sql"
+	"errors"
 	"fmt"
 	"github.com/36625090/xorm/pageable"
 	"io"
@@ -48,6 +49,35 @@ type Engine struct {
 	DatabaseTZ *time.Location // The timezone of the database
 
 	logSessionID bool // create session id
+}
+
+// NewEnginePlus new a db manager
+func NewEnginePlus(cfg *Config, w io.Writer) (EngineInterface, error) {
+	if cfg.Master == "" {
+		return nil, errors.New("master cannot be empty")
+	}
+
+	var eng EngineInterface
+	var err error
+	if cfg.Slaves == nil || len(cfg.Slaves) == 0 {
+		eng, err = NewEngine(cfg.Driver, cfg.Master)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		eng, err = NewEngineGroup(cfg.Driver, append([]string{cfg.Master}, cfg.Slaves...))
+	}
+
+	if err != nil {
+		return nil, err
+	}
+	if cfg.ShowSql {
+		eng.ShowSQL(cfg.ShowSql)
+	}
+	eng.SetLogger(w)
+	eng.SetMaxIdleConns(cfg.MaxIdle)
+	eng.SetMaxOpenConns(cfg.MaxConn)
+	return eng, nil
 }
 
 // NewEngine new a db manager according to the parameter. Currently support four
