@@ -7,7 +7,6 @@ package xorm
 import (
 	"context"
 	"database/sql"
-	"github.com/36625090/xorm/pageable"
 	"reflect"
 	"time"
 
@@ -79,7 +78,7 @@ type Interface interface {
 // EngineInterface defines the interface which Engine, EngineGroup will implementate.
 type EngineInterface interface {
 	Interface
-	FindPagination(rowsSlicePtr interface{}, page pageable.Pageable, condiBean ...interface{}) (*pageable.Pagination, error)
+	//FindPagination(rowsSlicePtr interface{}, page pageable.Pageable, condiBean ...interface{}) (*pageable.Pagination, error)
 	Before(func(interface{})) *Session
 	Charset(charset string) *Session
 	ClearCache(...interface{}) error
